@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <metdteruura charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>e-commerce</title>
+<style>
+  /* Tous grands ecran*/
+@media(min-width: 1400px) {
+    header{
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .hero{
+        padding-left: 10%;
+        padding-right: 10%;
+        min-height: 700px;
+    }
+    .categories-section, 
+    .products-section{
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+}
+/*petit ordibateur*/
+
+@media(max-width:1200px){
+    header{
+        padding: 0 4%;
+    }
+    .hero{
+        padding: 80px 6%;
+    }
+    .categories-section,
+    .products-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .categories{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .products-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/*Tablette*/
+@media (max-width: 992px){
+    .desktop-nav{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+
+    .hero{
+        min-height: 600px;
+        padding: 70px 7;
+    }
+    .hero h1{
+        font-size: clamp(48px, 8vw, 75px);
+    }
+
+    .categories{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+/*Pteit Tablette / Grand telephone*/
+
+@media(max-width: 768px){
+    header{
+        height: 70px;
+        padding: 0 5%;
+    }
+    .mobile-menu{
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+    .logo{
+        font-size: 21px
+    }
+    .logo .log{
+        font-size: 29px;
+    }
+
+    .icon-btn{
+        display: none;
+    }
+    .header-action{
+        gap: 7px;
+    }
+
+    .hero{
+        min-height: 570px;
+        padding: 60px 6%;
+    }
+    .hero h1{
+        font-size: clamp(45px, 11vw, 65px);
+        letter-spacing: -3px;
+    }
+    .hero p{
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .hero-button{
+        flex-wrap: wrap;
+    }
+
+    .categories-section, 
+    .products-section{
+        padding: 70px 5%;
+    }
+    .section-title h2,
+    .section-heading{
+        font-size: 35px;
+    }
+
+    .products-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-image{
+        width: 120px;
+        height: 120px;
+        font-size: 42px;
+    }
+    .promotion{
+        margin: 0 5%;
+        padding: 50px 30px;
+    }
+
+    .footer{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+/*Mobile*/
+
+@media (max-width: 576px) {
+    header{
+        padding: 0 4%;
+    }
+    .logo{
+        font-size: 19px;
+    }
+    .logo .log{
+        font-size: 27px;
+    }
+    .cart-btn,
+    .hamburger{
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero{
+        min-height: 600px;
+        padding: 60px 6%;
+    }
+    .hero::after{
+    width: 250px;
+    height: 250px;
+    right: -100px;
+    top: 20%;
+    }
+    .hero-label{
+         font-size: 10px;
+         letter-spacing: 2px;
+    }
+    .hero h1{
+        font-size: clamp(42px, 12vw, 58px);
+    }
+    .hero p{
+        font-size: 15px;
+        line-height: 1.6
+    }
+    .hero-button{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn{
+        justify-content: center;
+        width: 100%;
+    }
+    .categories{
+        grid-template-columns: 1fr;
+    }
+    .categories{
+        padding: 28px 22px;
+    }
+
+    .products-grid{
+        grid-template-columns: 1fr;
+    }
+    .product-image{
+        height: 280px;
+    }
+    .fake-image{
+        width: 150px;
+        height: 150px;
+        font-size: 50px;
+    }
+    .section-heading h2,
+    .section-title h2 {
+        font-size: 30px;
+    }
+    .section-title p{
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .promotion{
+        margin: 0 4% 60px;
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+    .promotion h2 {
+        font-size: 36px;
+    }
+
+    .footer-content{
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}
+/* petits telephone*/
+@media (max-width: 380px){
+    header{
+        height: 65px;
+    }
+    .mobile-menu{
+        top: 65px;
+        height: calc(100vh - 65px);
+    }
+    .logo{
+        font-size: 17px;
+    }
+    .logo .log{
+        font-size: 24px;
+    }
+    .cart-btn, .hamburger{
+        width: 35px;
+        height: 35px;
+    }
+    .hero{
+        padding: 50px 5%;
+    }
+    .hero h1{
+        font-size: 40px;
+    }
+    .hero p{
+        font-size: 14px;
+    }
+    .categories-section, 
+    .section-heading{
+       padding: 55px 4%;
+    }
+    .section-title h2, 
+    .section-heading h2{
+         font-size: 27px;
+    }
+    .product-info{
+        padding: 18px;
+    }
+    .product-image{
+        height: 240px;
+    }
+    .promotion{
+        padding: 35px 20px;
+    }
+    .promotion h2{
+        font-size: 31px;
+    }
+
+}
+/*tres petits ecran*/
+@media (max-width: 320px) {
+    .logo{
+        font-size: 16px;
+    }
+    .logo .log{
+     font-size: 22px;   
+    }
+    .header-action{
+        gap: 3px;
+    }
+    .hero h1{
+        font-size: 36px;
+    }
+    .hero{
+        min-height: 550px;
+    }
+    .product-image{
+        height: 210px;
+    }
+}
+
+:root{
+    --primary: #f0c14a;
+    --secondary: #fefc6af3;
+    --primary-ligth :#d3f1a2d9;
+
+    --beige: #f5ead7;
+    
+    --black: #000000;
+    
+    --text : black;
+
+    --white: #ffffff;
+    --gray: #777777;
+
+    --radius: 30px;
+    --shadow: 0 20px 60px rgba(45, 52, 120, .12);
+    --glass: rgba(255,255,255,.55);
+    --transition: .3s ease; 
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    
+}
+button{
+    font-family: inherit;
+    cursor: pointer;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    background:  var(--background);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.lo{
+    width: 60px;
+    height: 60px;
+}
+
+
+.desktop-nav{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    
+}
+.desktop-nav a{
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 1px solid var(--black);
+    border-radius: var(--radius);
+    background: var(--glass);
+    padding: 8px;
+}
+.header-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.icon-btn, .cart-btn{
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: var(--secondary);
+    border-radius: var(--radius);
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.icon-btn :hover{
+    color: var(--orange);
+}
+.cart-btn{
+    position: relative;
+    background: red;
+    color: var(--white)
+}
+.cart-btn :hover{
+    background: var(--primary);
+}
+.cart-btn span{
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    width: 19px;
+    height: 19px;
+    background: var(--primary);
+    color: var(--white);
+    border: 50%;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.hamburger {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: var(--background);
+    border-radius: 50%;
+    padding: 9px;
+    cursor: pointer;
+    position: relative;
+    z-index: 6000;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--black);
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+
+/* Animation vers X */
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+
+.mobile-menu {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 50%;
+    max-width: 350px;
+    height: calc(100vh - 80px);
+    padding: 40px 30px;
+    background: rgba(0, 0, 0, 0.217);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+    z-index: 5000;
+    transition: right 0.4s ease;
+    overflow-y: auto;
+}
+
+
+/* MENU OUVERT */
+
+.mobile-menu.active {
+    right: 0;
+    width: 65%;
+    height: 50%;
+}
+
+
+.mobile-menu a {
+    color: white;
+    font-size: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.mobile-menu a:hover {
+    color: var(--secondary);
+}
+
+
+/* ==========================================
+   TABLETTE + MOBILE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .hamburger {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-menu {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+}
+
+
+/* ==========================================
+   PETIT TELEPHONE
+========================================== */
+
+@media (max-width: 380px) {
+
+    header {
+        height: 65px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+    }
+
+    .mobile-menu {
+        top: 65px;
+        height: calc(100vh - 65px);
+    }
+
+}
+
+
+.hero{ 
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background:
+        radial-gradient(circle at 70% 50%, var(--primary-ligth), transparent 80%),
+        radial-gradient(circle at 30% 60%, var(--secondary), transparent 30%),
+        var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero ::after{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    background: var(--background);
+    filter: blur(5px);
+    margin-left: 250px;
+}
+.hero-content{
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+.hero-label {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+.hero h1{
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 0.95;
+    margin: 25px 0;
+    letter-spacing: -4px;
+}
+.hero h1 span{
+    color: var(--white);
+}
+.hero p{
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--gray);
+}
+.hero-buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+
+}
+.btn{
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3
+}
+.primary-btn{
+    background: var(--white);
+    color: var(--black);
+
+}
+.primary-btn:hover{
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+.secondary-btn{
+    border: 1px solid var(--black);
+    color: var(--black);
+}
+.secondary-btn:hover{
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+
+.categories-section,
+ .products-section{
+    padding: 100px 7%;
+}
+
+.section-title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-heading span, 
+.section-title span{
+    color: var(--primary);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+.section-heading h2, 
+.section-title h2{
+    margin: 10px 0;
+    font-size: 42px;
+}
+.section-title p{
+    color: var(--gray);
+}
+
+.categories{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+.category-card{
+    background: var(--beige);
+    padding: 35px 25px;
+    border-radius: var(--radius);
+    border: 1px solid white;
+    transition: 0.3s;
+}
+.category-icon :hover{
+    transform: translateY(8px);
+    box-shadow: 0 20px 40px var(--background)
+
+}
+.category-icon{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background:  var(--beige);
+    color: var(--primary);
+    font-size: 22px;
+    
+}
+.category-icon img{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.category-card h3{
+    margin-bottom: 10px;
+}
+.category-card p{
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.category-card a{
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary);
+    font-weight: 700;
+}
+/* ADAPTATION CAT*/
+@media (max-width: 1000px) {
+    .categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.promotion{
+    margin: 0 7% 100px;
+    border-radius: 25px ;
+    padding: 70px;
+    background:
+        radial-gradient(circle at 30% 50%, var(--primary-ligth), transparent 80%),
+        radial-gradient(circle at 30% 60%, var(--secondary), transparent 30%),
+        var(--primary);
+    color: var(--white);
+}
+.promotion-content{
+    max-width: 650px;
+}
+.promotion span{
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+.promotion h2 {
+    font-size: clamp(35px, 5vw, 69px);
+    margin: 15px 0;
+}
+.promotion h2 strong{
+    color: var(--black);
+}
+.promotion p{
+    color: var(--black);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.white-btn{
+    background: var(--background);
+    border: 1px solid black;
+    color: var(--black);
+}
+.white-btn:hover{
+    background: var(--secondary) ;
+    transform: translateY(-3px);
+}
+
+
+.section-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.view-all{
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 30px;
+}
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    background: var(--background);
+}
+
+.product-cart {
+    background: var(--beige);
+    border-radius: var(--radius);
+    overflow: hidden;
+    
+    width: 100%;
+    min-width: 0;
+    transform: translateY(-3px);
+}
+
+/* Image du produit */
+.product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: var(--beige);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fake-image {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    font-size: 55px;
+}
+/*ADAPTATION IMAGES*/
+
+/* Ordinateur */
+@media (min-width: 1200px) {
+    .product-image {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+/* Tablette / petit ordinateur */
+@media (max-width: 1199px) {
+    .product-image {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+/* Téléphone */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .product-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .fake-image {
+        font-size: 40px;
+    }
+}
+
+/* Petit téléphone */
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-info{
+    padding: 22px;
+}
+.product-category{
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+.product-info h3{
+    margin: 8px 0;
+}
+.rating{
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.price{
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.price strong{
+    font-size: 18px;
+}
+.old-price{
+    text-decoration: line-through;
+    color: #999;
+    font-size: 13px;
+}
+.add-cart{
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px;
+    border: none;
+    background: var(--black);
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.add-cart:hover{
+    background: var(--primary);
+}
+
+
+footer{
+    background: var(--black);
+    color: var(--white);
+    padding: 70px 7% 20px;
+
+}
+
+.log{
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius)
+}
+.footer-content{
+    display: grid;
+    grid-template-columns: 2fr, 1fr, 1fr, 1fr;
+    gap: 50px;
+}
+.footer-brand p {
+    color: var(--white);
+    max-width: 300px;
+    margin: 20px 0;
+    line-height: 1.6;
+
+}
+.socials{
+    display: flex;
+    gap: 10px;
+}
+.socials a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.socials a img{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+.socials a :hover{
+    background: var(--primary-ligth);
+    border-radius: var(--radius);
+}
+.footer-column{
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+.footer-column h3{
+    margin-bottom: 10px;
+}
+.footer-column a, 
+.footer-column p{
+    gap: 10px;
+    color: var(-- --white);
+
+}
+
+.footer-column a:hover{
+    color: var(--secondary);
+}
+.footer-column p{
+    display: flex;
+    gap: 10px;
+}
+.ima{
+    width: 20px;
+    height: 20px;
+}
+.im{
+    width: 20px;
+    height: 20px;
+}
+.copyright{
+    border-top: 1px solid #222;
+    margin-top: 50px;
+    padding-top: 25px;
+    
+    text-align: center;
+    color: var(--gray);
+    font-size: 13px;
+}
+/*Panier*/
+.cart-panel{
+    position: fixed;
+    right: -450px;
+    top: 0;
+    width: 420px;
+    max-width: 90%;
+    height: 70%;
+    background: var(--beige);
+    z-index: 2000;
+    border: 1px solid var(--black);
+    border-radius: var(--radius);
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+.cart-panel.active{
+    right: 0;
+
+}
+.cart-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 25px; 
+    border-bottom: 1px solid var(--primary); 
+    background: var(--primary-light);
+}
+.cart-header button{
+    border: none;
+    background: var(--primary-ligth);
+    font-size: 20px;
+    border-radius: var(--radius);
+    padding: 18px;
+    cursor: pointer;
+}
+.cart-items{
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    
+}
+.empty-cart{
+    text-align: center;
+    color: #999;
+    margin-top: 50px;
+   
+
+}
+.cart-product { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 15px; 
+    padding: 15px 0; 
+    border-bottom: 1px solid var(--primary); 
+}
+.cart-product button{
+    border: none;
+    background: var(--background);
+    color: red;
+}
+
+.cart-product-info { 
+    flex: 1; 
+} 
+.cart-product-info h4 { 
+    margin: 0 0 5px; 
+}
+
+.cart-product-info p { 
+    margin: 0; 
+    font-weight: bold; 
+}
+
+.cart-quantity { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    margin-top: 8px; } 
+.cart-quantity button { 
+        width: 28px; 
+        height: 28px; 
+        border: none; 
+        background: var(--primary-ligth); 
+        border-radius: var(--radius); 
+        cursor: pointer; 
+} 
+.delete-product { 
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: var(--beige);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease;
+}
+.delete-product:hover{
+    background: var(--primary-ligth);
+    transform: scale(1.08);
+}
+
+.cart-footer{
+    padding: 25px;
+    border-top: 1px solid var(--primary);
+    background: var(--beige);
+    border-radius: var(--radius);
+}
+
+.checkout{
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    background: var(--primary-ligth);
+    color: var(--text);
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.ima{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.checkout:hover { 
+    opacity: 0.9; 
+}
+
+/*ADAPTATION RESPONSIVE TAB*/
+
+@media (max-width:1000px){
+    .desktop-nav{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .categories{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-image{
+         grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+/*MOBILE*/
+
+@media (max-width:600px) {
+    header{
+        height: 70px;
+        padding: 0 5%;
+    }
+    .mobile-menu{
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+    .header-action{
+        gap: 40px;
+    }
+    .icon-btn{
+        display: none;
+    }
+    .hero{
+        min-height: 600px;
+        padding: 70px 7%;
+    }
+    .hero p{
+        font-size: 15px;
+    }
+    .hero-button{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .categories-section, 
+    .products-section {
+        padding: 70px 5%;
+    }
+    .categories{
+        grid-template-columns: 1fr;
+    }
+    .products-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .section-title h2, 
+    .section-heading h2 {
+        font-size: 32px;
+    }
+    .promotion{
+        margin: 0 5% 70px;
+        padding: 40px 25px;
+    }
+    .footer-content{
+        grid-template-columns: 1fr;
+    }
+
+    
+}
+/*FIN ............*/
+
+/*ANDROID tactil*/
+@media (hover:none) and (pointer: coarse){
+    button a {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .category-card:hover, 
+    .product-card:hover, 
+    .btn:hover{
+        transform: none;
+    }
+    .btn:active{
+        transform: scale(.9);
+    }
+    
+
+}
+/*ECRAN ANDROID AVEC ENCOCHE*/
+
+@supports(padding: env(safe-area-inset-top)){
+    header{
+        padding-left: max(18px, env(safe-area-inset-left));
+        padding-right: max(18px, env(safe-area-inset-right));
+    }
+    body{
+        padding-bottom: env(safe-area-inset-bottom) ;
+    }
+}
+/*MODE PAYSAGE ANDROID*/
+
+@media screen 
+    and (max-width: 900px)
+    and (orientation: landscape) {
+        header{
+            height: 60px;
+        }
+        .mobile-menu{
+            top: 60px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        .hero{
+            min-height: auto;
+            padding: 50px 30px;
+            grid-template-columns: 1fr, 1fr;
+            display: grid;
+            text-align: left;
+        }
+        .hero-buttons{
+            flex-direction: row;
+        }
+        .hero-buttons .btn{
+            width: auto;
+        }
+
+}
+</style>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="lo" src="Éclat Pudique, élégance dorée.png" alt="logo Awa"> 
+            
+        </div>
+
+        <nav class="desktop-nav">
+            <a  href="#accueil">Accueil</a>
+            <a href="#categories">Catégories</a>
+            <a href="#promotion">Promotions</a>
+            <a href="#contact">Contact</a>
+            <a href="#boutique">Boutique</a>
+        </nav>
+
+        <div class="header-action">
+      
+            <button class="icon-btn" id="openCart" type="button">
+                <img src="panier.jpeg" alt="panier">
+                <span id="cartcount">
+                    <strong>0</strong>
+                </span>
+            </button>
+
+            <button class="hamburger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="#accueil">Accueil</a>
+            <a href="#categories">Catégories</a>
+            <a href="#promotion">Promotions</a>
+            <a href="#contact">Contact</a>
+            <a href="#boutique">Boutique</a>
+        </nav>
+
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <span>NOUVELLE COLLECTION</span>
+
+                    <h1>La pudeur <br>
+                    <span> Ton éclat éternel!</span>
+                    </h1>
+
+                    <p>Découvez votre selection de vêtement musulman</p>
+                    <br>
+
+                    <div class="hero-buttons">
+                        <a href="#boutique" class="btn primary-btn">Decouvrez la Boutique
+                            <i class="fa-solid fa-arrow-rigth"></i>
+                        </a>
+                        <a href="#categories" class="btn secondary-btn">
+                            Voir les catégories
+                        </a>
+                    </div>
+            </div>
+        </section>
+        
+        <section class="section-title" id="categories">
+
+            <div class="section-title">
+                <span>EXPLORER</span>
+                <h2>Nos catégories</h2>
+                <p>Tous ce qu'il vous faut réléver votre style.</p>
+            </div>
+
+            <div class="categories">
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="voilechapeau.jpeg" alt="voile1">
+                    </div><br>
+                    <h3>Voile </h3>
+
+                    <p></p>
+                    <a href="#boutique">Explorer</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="mouslime.jpeg" alt="mouslime">
+                    </div><br>
+                    <h3>Mouslime </h3>
+
+                    <p> importer.</p>
+                    <a href="#boutique">Explorer</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="manches.jpeg" alt="manches">
+                    </div><br>
+                    <h3>Manches</h3>
+
+                    <p></p>
+                    <a href="#boutique">Explorer</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="voileleopard.jpeg" alt="voile4">
+                    </div><br>
+                    <h3>Voile Leopard</h3>
+
+                    <p>Premieum</p>
+                    <a href="#boutique">Explorer</a>
+                </div>
+
+            </div>
+        
+        </section>
+
+        <section class="promotion" id="promotion">
+
+            <div class="promotion-content">
+                <span>OFFRE SPECIALE</span>
+                <h2>aucune <strong>réduction</strong>  pour l'instant</h2>
+                
+                <p>Profitez de nos offres exclusives pendant une durée limitée.</p>
+                <br>
+                <a href="#boutique" class="btn white-btn">Profiter de L'offre</a>
+            </div>
+
+        </section>
+
+        <section class="produits-section" id="boutique">
+
+            <div class="section-heading">
+                <div>
+                    <span>NOTRE SÉLECTION</span>
+                    <h2>Boutique</h2>
+                </div>
+                <a href="https://wa.me/+2250714005285?text=Bonjours%20je%20suis%20intéressé%20par%20vos%20produits%20"
+                    class="view-all"> voir <i class="fa-solid fa-arrow-rigth">+</i>
+                </a>
+
+            </div>
+
+            <div class="products-grid" id="productGrid">
+
+                <article class="product-cart">
+                    <div class="product-image">
+                        <span></span>
+
+                        <div class="fake-image">
+                            <img src="mouslime.jpeg" alt="1">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category"></span>
+                        <h3>Mouslime</h3>
+
+                        <div class="rating">
+                            Article importer
+                        </div>
+                        <div class="price">
+                            <span class="old-price"></span>
+                            <strong>2 500 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Mouslime">
+                           <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voileleopard.jpeg" alt="2">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voile Leopard</h3>
+
+                        <div class="rating">
+                            Premieum
+                        </div>
+                        <div class="price">
+                            
+                            <strong>3 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile Leopard">
+                           <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voileAsma.jpeg" alt="3">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voile Asma</h3>
+
+                        <div class="rating">
+                
+                        </div>
+                        <div class="price">
+                        
+                            <strong>2 500 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile Asma">
+                           <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voile2en1.jpeg" alt="4">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voile 2 en 1</h3>
+
+                        <div class="rating">
+                            
+                        </div>
+                        <div class="price">
+                            
+                            <strong>3 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile 2 en 1">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voileKepi.jpeg" alt="5">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voiel Képi</h3>
+
+                        <div class="rating">
+                            
+                        </div>
+                        <div class="price">
+                            
+                            <strong>4 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile Képi">
+                           <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voile2.jpeg" alt="6">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voile 2 en 2</h3>
+
+                        <div class="rating">
+                            
+                        </div>
+                        <div class="price">
+                
+                            <strong>3 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile 2 en 2">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+     
+                        <div class="fake-image">
+                            <img src="pashmina-couleurU.jpeg" alt="7">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>pashmina couleur Unique</h3>
+
+                        <div class="rating">
+                        
+                        </div>
+                        <div class="price">
+                        
+                            <strong>2 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="pashmina couleur Unique">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+                    
+                        <div class="fake-image">
+                            <img src="pashminaIMpoter.jpeg" alt="8">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>pashmina</h3>
+
+                        <div class="rating">
+                            Article importer
+                        </div>
+                        <div class="price">
+                            
+                            <strong>3 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Pashmina importer">
+                                <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="MINIVOILE.jpeg" alt="9">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Mini Voiles </h3>
+
+                        <div class="rating">
+                        Avec Pression
+                        </div>
+                        <div class="price">
+                        
+                            <strong>2 500 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Mini Voile ">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="jerserLOCAL.jpeg" alt="10">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>jerser Local</h3>
+
+                        <div class="rating">
+                            
+                        </div>
+                        <div class="price">
+                            
+                            <strong>2 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Jersey Local">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="manches.jpeg" alt="11">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">manches</span>
+                        <h3>Manches</h3>
+
+                        <div class="rating">
+                            exite en plusieu couleur
+                        </div>
+                        <div class="price">
+                            
+                            <strong>1 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Manches">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voilechapeau.jpeg" alt="12">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voiles Chapeau Colier</h3>
+
+                        <div class="rating">
+                            
+                        </div>
+                        <div class="price">
+                            
+                            <strong>2 500 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile Chapeau Colier">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="jersey.jpeg" alt="12">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>jersey</h3>
+
+                        <div class="rating">
+                            À deux ton
+                        </div>
+                        <div class="price">
+                            
+                            <strong>3 000 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Jersey à deux ton">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="voilemultiC.jpeg" alt="12">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Voiles</span>
+                        <h3>Voiles Multicolore</h3>
+
+                        <div class="rating">
+                            
+                        </div>
+                        <div class="price">
+                            
+                            <strong>2 500 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Voile Muliticolore">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-cart">
+                    <div class="product-image">
+
+                        <div class="fake-image">
+                            <img src="epingleF.jpeg" alt="12">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Épingles</span>
+                        <h3>Épingle</h3>
+
+                        <div class="rating">
+                          
+                        </div>
+                        <div class="price">
+                        
+                            <strong>à partis de 500 FCFA</strong>
+                        </div>
+
+                        <button class="add-cart" data-product="Épingle">
+                            <img src="panier.jpeg" alt="panier"> Ajouter au Panier
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        <br>
+    
+    <footer id="contact">
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <div class="logo">
+                    <img class="log" src="logoawaN.jpeg" alt="logo">
+                </div>
+
+                <p>Soyez frais et éllegant </p>
+
+                <div class="socials">
+                    <a href="https://www.tiktok.com/@awasoum176" target="_blank"><img src="tiktok logo.jpeg" alt="logo"></a>
+                    <a href="https://wa.me/+2250714005285"><img src="whatsapp logo 2.jpeg" alt="logo"></a>
+                </div>
+
+            </div>
+
+            <div class="footer-column">
+                <h3>Boutique</h3>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#categories">Catégories</a>
+                    <a href="#promotion">Promotions</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#boutique">Boutique</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Information</h3>
+                <p>Pour en savoir plus sur la conception de ce site
+                    cliquer ici --> <a href="http://www.maewens.com">Maewen's</a>
+                </p>
+            </div>
+           
+                    
+            
+
+        </div>
+        <br>
+            <hr>
+        <div class="copyrigth">2026 Ma boutique _ tous droits recervés.</div>
+
+    </footer>
+
+
+
+    <div class="cart-panel" id="cartPanel">
+
+            <div class="cart-header">
+                <h2>Mon Panier</h2>
+
+                <button id="closecart" type="button"
+                        aria-label="ferme le panier">
+                    <i class="fa-solid fa-xmark">X</i>
+                </button>
+            </div>
+
+
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Votre panier est vide.</p>
+            </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                Total :
+                <strong id="cartTotal">0 FCFA</strong>
+            </div>
+        
+                <button class="checkout" id="checkoutBtn" type="button">
+                    <img class="ima" src="whatsapp1.jpeg" alt="logo w">
+                    Commander
+                </button>
+
+        </div>
+
+    </div>
+
+    <script>
+      // ==========================================
+// MENU HAMBURGER
+// ==========================================
+
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+console.log("Hamburger :", hamburger);
+console.log("Mobile menu :", mobileMenu);
+
+if (hamburger && mobileMenu) {
+
+    hamburger.addEventListener("click", function () {
+
+        hamburger.classList.toggle("active");
+
+        mobileMenu.classList.toggle("active");
+
+    });
+
+}
+
+// JENNIFER STORE - PANIER 
+ // OUVRIR LE PANIER
+
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+
+    const cartPanel = document.getElementById("cartPanel");
+    const openCart = document.getElementById("openCart");
+    const closeCart = document.getElementById("closecart");
+   
+
+openCart.addEventListener("click", function () {
+    cartPanel.classList.add("active");
+});
+
+    if (openCart) {
+        openCart.addEventListener("click", function () {
+            cartPanel.classList.add("active");
+        });
+    }
+
+    // FERMER LE PANIER
+    if (closeCart) {
+        closeCart.addEventListener("click", function () {
+            cartPanel.classList.remove("active");
+        });
+    }
+
+});
+
+// ------------------------------------------------------
+// ELEMENTS HTML (variables)
+// ------------------------------------------------------
+
+const cartPanel = document.getElementById("cartPanel");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+const closeCart = document.getElementById("close-cart");
+
+
+// Bouton panier dans le header
+const cartButton = document.querySelector(
+    ".header-action .fa-bag-shopping"
+);
+
+
+// Compteur du panier
+const cartCount = document.getElementById("cartcount");
+
+
+// Boutons "Ajouter au panier"
+const addCartButtons = document.querySelectorAll(".add-cart");
+
+
+// Bouton passer commande
+const checkoutButton = document.querySelector(".checkout");
+
+
+// Tableau du panier
+let cart = [];
+
+
+
+// ======================================================
+// RECUPERER LES INFORMATIONS D'UN PRODUIT
+// ======================================================
+
+function getProductFromButton(button) {
+
+    // Nom du produit
+    const name = button.dataset.product;
+
+
+    // On récupère la carte du produit
+    const productCard = button.closest(".product-cart");
+
+
+    if (!productCard) {
+        console.error("Carte produit introuvable");
+        return null;
+    }
+
+
+    // Récupérer le prix
+    const priceElement = productCard.querySelector(
+        ".price strong"
+    );
+
+
+    if (!priceElement) {
+        console.error(
+            "Prix introuvable pour : " + name
+        );
+
+        return null;
+    }
+
+
+
+    const price = parseInt(
+        priceElement.textContent
+            .replace(/[^\d]/g, ""),
+        10
+    );
+
+
+    // ID unique basé sur le nom
+    const id = name
+        .toLowerCase()
+        .replace(/\s+/g, "-");
+
+
+    return {
+        id: id,
+        name: name,
+        price: price,
+        quantity: 1
+    };
+}
+
+
+
+// ======================================================
+// AJOUTER AU PANIER
+// ======================================================
+
+function addToCart(product) {
+
+    if (!product) {
+        return;
+    }
+
+    const existingProduct = cart.find(
+        item => item.id === product.id
+    );
+
+
+    if (existingProduct) {
+
+
+        existingProduct.quantity++;
+
+    } else {
+
+        cart.push(product);
+    }
+
+
+   
+    updateCart();
+
+    openCart();
+}
+
+
+
+// ======================================================
+// OUVRIR LE PANIER
+// ======================================================
+
+function openCart() {
+
+    cartPanel.classList.add("active");
+}
+
+
+
+// ======================================================
+// FERMER LE PANIER
+// ======================================================
+
+function closeCartPanel() {
+
+    cartPanel.classList.remove("active");
+}
+
+
+if (closeCart) {
+
+    closeCart.addEventListener(
+        "click",
+        closeCartPanel
+    );
+}
+
+
+
+// ======================================================
+// BOUTON PANIER DU HEADER
+// ======================================================
+
+if (cartButton) {
+
+    cartButton.parentElement.addEventListener(
+        "click",
+        openCart
+    );
+}
+
+
+
+// ======================================================
+// BOUTONS AJOUTER AU PANIER
+// ======================================================
+
+addCartButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            const product =
+                getProductFromButton(this);
+
+            addToCart(product);
+
+        }
+    );
+
+});
+
+
+
+// ======================================================
+// AFFICHER LE PANIER
+// ======================================================
+
+function updateCart() {
+
+    // Vider l'affichage
+    cartItems.innerHTML = "";
+
+
+    // Panier vide
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+            <p class="empty-cart">
+                Votre panier est vide.
+            </p>
+        `;
+
+        cartTotal.textContent = "0 FCFA";
+
+        cartCount.textContent = "0";
+
+        return;
+    }
+
+
+    // Afficher chaque produit
+    cart.forEach(product => {
+
+        const productElement =
+            document.createElement("div");
+
+
+        productElement.classList.add(
+            "cart-product"
+        );
+
+
+        productElement.innerHTML = `
+
+            <div class="cart-product-info">
+
+                <h4>${product.name}</h4>
+
+                <p>
+                    ${formatPrice(product.price)}
+                    FCFA
+                </p>
+
+                <div class="cart-quantity">
+
+                    <button
+                        type="button"
+                        class="quantity-minus">
+                        −
+                    </button>
+
+                    <span>
+                        ${product.quantity}
+                    </span>
+
+                    <button
+                        type="button"
+                        class="quantity-plus">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="delete-product">
+
+                <img class="ima" src="corbeille.jpeg" alt="corbeille">
+
+            </button>
+
+        `;
+
+
+        // Bouton +
+        const plusButton =
+            productElement.querySelector(
+                ".quantity-plus"
+            );
+
+
+        plusButton.addEventListener(
+            "click",
+            () => {
+
+                product.quantity++;
+
+                updateCart();
+
+            }
+        );
+
+
+        // Bouton -
+        const minusButton =
+            productElement.querySelector(
+                ".quantity-minus"
+            );
+
+
+        minusButton.addEventListener(
+            "click",
+            () => {
+
+                product.quantity--;
+
+
+                if (product.quantity <= 0) {
+
+                    cart = cart.filter(
+                        item => item.id !== product.id
+                    );
+                }
+
+
+                updateCart();
+
+            }
+        );
+
+
+        // Bouton supprimer
+        const deleteButton =
+            productElement.querySelector(
+                ".delete-product"
+            );
+
+
+        deleteButton.addEventListener(
+            "click",
+            () => {
+
+                cart = cart.filter(
+                    item => item.id !== product.id
+                );
+
+
+                updateCart();
+
+            }
+        );
+
+
+        cartItems.appendChild(
+            productElement
+        );
+
+    });
+
+
+    // Calcul du total
+    calculateTotal();
+
+
+    // Mise à jour du compteur
+    updateCartCount();
+
+}
+
+
+
+// ======================================================
+// CALCULER LE TOTAL
+// ======================================================
+
+function calculateTotal() {
+
+    let total = 0;
+
+
+    cart.forEach(product => {
+
+        total +=
+            product.price *
+            product.quantity;
+
+    });
+
+
+    cartTotal.textContent =
+        formatPrice(total) + " FCFA";
+}
+
+
+
+// ======================================================
+// COMPTEUR DU PANIER
+// ======================================================
+
+function updateCartCount() {
+
+    let count = 0;
+
+
+    cart.forEach(product => {
+
+        count += product.quantity;
+
+    });
+
+
+    cartCount.textContent = count;
+}
+
+
+
+// ======================================================
+// FORMATAGE DES PRIX
+// ======================================================
+
+function formatPrice(price) {
+
+    return new Intl.NumberFormat(
+        "fr-FR"
+    ).format(price);
+
+}
+
+
+
+// ======================================================
+// PASSER COMMANDE
+// ======================================================
+
+if (checkoutButton) {
+
+    checkoutButton.addEventListener(
+        "click",
+        function () {
+
+            if (cart.length === 0) {
+
+                alert(
+                    "Votre panier est vide."
+                );
+
+                return;
+            }
+
+
+            // Construire le message WhatsApp
+            let message =
+                "Bonjour !%0A%0A" +
+                "Je souhaite passer la commande suivante :%0A%0A";
+
+
+            cart.forEach(product => {
+
+                const sousTotal =
+                    product.price *
+                    product.quantity;
+
+
+                message +=
+                    "• " +
+                    product.name +
+                    " x" +
+                    product.quantity +
+                    " = " +
+                    formatPrice(sousTotal) +
+                    " FCFA%0A";
+
+            });
+
+
+            // Calcul du total
+            let total = cart.reduce(
+                (sum, product) =>
+                    sum +
+                    product.price *
+                    product.quantity,
+                0
+            );
+
+
+            message +=
+                "%0A💰 Total : " +
+                formatPrice(total) +
+                " FCFA";
+
+
+            // Numéro WhatsApp de Jennifer Store
+            const whatsappNumber =
+                "2250714005285";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                message;
+
+
+            // Ouvrir WhatsApp
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+    );
+}
+
+
+
+// ======================================================
+// INITIALISATION
+// ======================================================
+
+updateCart();
+
+// ======================================================
+// SUPPRIMER DU PANIER
+// ======================================================
+
+cartItems.innerHTML = cart.map.apply((product, index) => `
+    <div class="cart-product">
+        <div class="cart-procut-info">
+            <h4> ${product.name}<h4/>
+            
+            <p> ${product.price.totalString("fr-FR")} FCFA<p/>
+            
+            <div class="decreaseQuantity(${index})">-</button>
+                <span> ${product.quantity}</span>
+                    <button onclick="increaseQuantity(${index})">
+                    
+                    
+                    
+                <button class="delete-product" 
+                    onclick="removeFromCart(${index})" 
+                    title="Supprimer cet article" 
+                    type="button">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+`).join("");
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+
+    renderCart();
+}
+
+
+    </script>
+</body>
+</html>
